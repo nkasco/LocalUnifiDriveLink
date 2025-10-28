@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Local Unifi Drive Demo</title>
+  <link rel="stylesheet" href="content/content.css">
+  <style>
+    /* small mock header styles to mimic layout */
+    .unifi-portal-1vz64y0.evzy7n80 { display:flex; gap:8px; align-items:center; padding:8px; background:#0b1220; color:#fff; }
+    .toolbar-item { display:inline-flex; align-items:center; padding:4px 6px; border-radius:6px; background:transparent; }
+    .toolbar-item a { color:inherit; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="unifi-portal-1vz64y0 evzy7n80">
+    <div class="toolbar-item"><a data-testid="applink-network" href="#">Network</a></div>
+    <div class="toolbar-item"><a data-testid="applink-protect" href="#">Protect</a></div>
+    <!-- drive icon should be inserted here -->
+  </div>
+
+  <h2>Demo controls (open DevTools console)</h2>
+  <p>Use <code>window.__localUnifiDrive.create('https://example.com')</code> to create the icon.</p>
+  <p>Use <code>window.__localUnifiDrive.repair()</code> to move any existing icon into the header.</p>
+  <p>Check the adjacency with: <code>document.querySelector('a[data-testid="applink-protect"]').nextElementSibling === document.getElementById(window.__localUnifiDrive.getId())</code></p>
+
+  <script src="content/content.js"></script>
+</body>
+</html>

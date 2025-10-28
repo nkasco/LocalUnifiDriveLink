@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Local UniFi Drive - Options</title>
+    <style>
+      body { font-family: Arial, Helvetica, sans-serif; padding: 16px; color: #222 }
+      label { display:block; margin-top:12px }
+      input[type="text"] { width:100%; padding:8px; font-size:14px }
+      button { margin-top:12px; padding:8px 12px }
+      .hint { color:#666; font-size:13px }
+    </style>
+  </head>
+  <body>
+    <h2>Drive Link</h2>
+    <p class="hint">Enter the URL the Drive icon should open when clicked.</p>
+    <label for="driveLink">URL</label>
+    <input id="driveLink" type="text" placeholder="https://your.local.drive/" />
+    <label for="delayedCreate">Delayed create (seconds)</label>
+    <input id="delayedCreate" type="number" min="0" step="1" placeholder="5" />
+    <div>
+      <button id="save">Save</button>
+      <button id="open">Open Link</button>
+    </div>
+
+    <script src="./options.js"></script>
+  </body>
+</html>

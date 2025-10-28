@@ -1,0 +1,94 @@
+
+/* Wrapper matches the header icon container: small rounded square with
+   subtle translucent background. Use strong specificity to beat site styles. */
+.local-unifi-drive-wrapper.local-unifi-drive-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 4px 6px !important;
+  padding: 0 !important;
+}
+
+.local-unifi-drive-wrapper .local-unifi-drive-img,
+.local-unifi-drive-wrapper .local-unifi-drive-svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: inline-block !important;
+  border-radius: 6px !important;
+  box-sizing: border-box !important;
+  padding: 4px !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+/* Default icon color: use a neutral light gray similar to other icons */
+.local-unifi-drive-wrapper {
+  color: #cbd5e1 !important; /* neutral/light gray */
+}
+
+/* Hover/active color: match the UniFi accent blue */
+.local-unifi-drive-wrapper:hover,
+.local-unifi-drive-wrapper:focus-within {
+  color: #60a5fa !important;
+}
+
+.local-unifi-drive-wrapper .local-unifi-drive-img,
+.local-unifi-drive-wrapper .local-unifi-drive-svg {
+  transition: transform 120ms ease-in-out, color 120ms ease-in-out !important;
+}
+
+/* If the PNG fails and we swap to an inline SVG data URL, ensure there's no dark
+   background applied by other site styles. The fallback class targets that case. */
+.local-unifi-drive-img.local-unifi-drive-svg-fallback {
+  background: transparent !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: inline-block !important;
+}
+
+/* Strong overrides to prevent site styles from creating a dark box */
+/* Ensure no site-level shadows/filters leak into the icon */
+.local-unifi-drive-wrapper,
+.local-unifi-drive-wrapper * {
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.local-unifi-drive-wrapper svg {
+  display: inline-block !important;
+  width: 28px !important;
+  height: 28px !important;
+  vertical-align: middle !important;
+}
+
+/* hide default broken image icon */
+.local-unifi-drive-img[src=""] { visibility: hidden; }
+
+/* Slight hover effect similar to toolbar icons */
+
+/* Hover/focus styles to match other header icons */
+.local-unifi-drive-wrapper:hover,
+.local-unifi-drive-wrapper:focus-within {
+  background: rgba(255,255,255,0.03) !important; /* subtle lightening */
+  border-radius: 8px !important;
+}
+
+.local-unifi-drive-wrapper:hover .local-unifi-drive-img,
+.local-unifi-drive-wrapper:hover .local-unifi-drive-svg,
+.local-unifi-drive-wrapper:focus-within .local-unifi-drive-img,
+.local-unifi-drive-wrapper:focus-within .local-unifi-drive-svg {
+  transform: translateY(0) scale(1.02) !important;
+  transition: transform 120ms ease-in-out !important;
+}
+
+/* Active press state */
+.local-unifi-drive-wrapper:active .local-unifi-drive-img,
+.local-unifi-drive-wrapper:active .local-unifi-drive-svg {
+  transform: scale(0.98) !important;
+}
+
+/* Ensure high z-index so it sits above the UI elements */
+.local-unifi-drive-wrapper {
+  z-index: 9999;
+}
